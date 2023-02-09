@@ -1,0 +1,24 @@
+<h3>Welcome {{session['user_fname']}}!</h3> 
+<a href="/create_recipe">Create</a> <a href="/logout">logout</a>
+<p>These are the recipes</p>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Under 30 Minutes? </th>
+        <th>Actions</th>
+    </tr>
+
+    {% for recipes in all_recipes %}
+    <tr>
+        <td>{{recipes.name}}</td>
+        <td>{{recipes.status}}</td>
+        {% if session['user_id'] != recipes.user_id  %}
+            <td><a href="/view_recipe/{{recipes.users_id}}">View Instructions</a></td>
+        
+        {% else %}
+            <td><a href="/view_recipe/{{recipes.users_id}}">View Instructions</a> | <a href="/retrieve_recipe/{{recipes.id}}">Update</a> | <a href="/delete_recipe/{{recipes.id}}">Delete</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+
+</table>

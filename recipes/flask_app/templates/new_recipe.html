@@ -1,0 +1,20 @@
+<h3>New Recipe</h3>
+<form method="POST" action="/add_recipe">
+    <label>Name:</label><br>
+    <input type="text" name="txt-name"><br><br>
+
+    <label>Description:</label><br>
+    <textarea name="txt-description"></textarea><br><br>
+    
+    <label>Instructions:</label><br>
+    <textarea name="txt-instructions"></textarea><br><br>
+
+    <label>Date Made On:</label><br>
+    <input type="date" name="txt-date"><br><br>
+
+    <label>Under 30 Minutes?</label><br>
+    Yes<input type="radio" name="txt-status" value="Yes">
+    No<input type="radio" name="txt-status" value="No"><br><br>
+
+    <input type="submit" value="Create">
+</form>
